@@ -89,7 +89,7 @@ function prompt_chi_precmd {
   chi_ruby_info
 
   # Define prompts.
-  RPROMPT='${ruby_info[version]}${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}'
+  RPROMPT='${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}${ruby_info[version]}'
 
   # Kill the old process of slow commands if it is still running.
   if (( _prompt_chi_precmd_async_pid > 0 )); then

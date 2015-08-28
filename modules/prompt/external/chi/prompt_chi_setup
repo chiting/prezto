@@ -55,7 +55,7 @@ function prompt_chi_git_info {
     if [[ -s "$_prompt_chi_precmd_async_data" ]]; then
       alias typeset='typeset -g'
       source "$_prompt_chi_precmd_async_data"
-      RPROMPT+='${git_info:+${(e)git_info[status]}}'
+      RPROMPT+='${git_info:+${(e)git_info[status]}}${ruby_info[version]}'
       unalias typeset
     fi
 
@@ -89,7 +89,7 @@ function prompt_chi_precmd {
   chi_ruby_info
 
   # Define prompts.
-  RPROMPT='${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}${ruby_info[version]}'
+  RPROMPT='${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}'
 
   # Kill the old process of slow commands if it is still running.
   if (( _prompt_chi_precmd_async_pid > 0 )); then

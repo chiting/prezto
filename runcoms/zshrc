@@ -12,6 +12,9 @@ fi
 
 # Customize to your needs...
 
+# umask
+umask 0077
+
 # Load dotfiles
 for file in ~/.{aliases,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -32,3 +35,6 @@ source /usr/local/etc/profile.d/autojump.sh
 export GOROOT=`go env GOROOT`
 export GOPATH=$PROJECTS/perso/golang
 export PATH=$PATH:$GOROOT/bin
+
+# Remove no match error (HEAD^)
+unsetopt nomatch

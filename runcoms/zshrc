@@ -33,7 +33,8 @@ source /usr/local/etc/profile.d/autojump.sh
 
 # Go settings
 export GOROOT=`go env GOROOT`
-export GOPATH=$PROJECTS/perso/golang
+# GOPATH is set in .extra
+#export GOPATH=$PROJECTS/perso/golang
 export PATH=$PATH:$GOROOT/bin
 
 # Remove no match error (HEAD^)

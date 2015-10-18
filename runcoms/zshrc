@@ -21,9 +21,6 @@ for file in ~/.{aliases,extra}; do
 done;
 unset file;
 
-# some vars
-export PROJECTS=$HOME/Projects
-
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
@@ -34,8 +31,11 @@ source /usr/local/etc/profile.d/autojump.sh
 # Go settings
 export GOROOT=`go env GOROOT`
 # GOPATH is set in .extra
-#export GOPATH=$PROJECTS/perso/golang
 export PATH=$PATH:$GOROOT/bin
 
 # Remove no match error (HEAD^)
 unsetopt nomatch
+
+# Set editor
+export EDITOR=vi
+export VISUAL=vi

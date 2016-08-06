@@ -14,3 +14,9 @@ fi
 
 # User configuration
 umask 0077
+
+# Load dotfiles
+for file in ~/.{aliases,extra}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;

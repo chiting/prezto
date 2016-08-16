@@ -16,7 +16,7 @@ fi
 umask 0077
 
 # Load dotfiles
-for file in ~/.{aliases,extra}; do
+for file in ~/.{aliases/aliases,extras/extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

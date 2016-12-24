@@ -39,6 +39,13 @@ for file in ~/.{aliases/py,extras/py}; do
 done;
 unset file
 
+# Load elixir env
+for file in ~/.{aliases/elixir,extras/elixir}; do
+  [ -r "$file" ] && [ -f "$file" ] && . "$file";
+done;
+unset file
+
+
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
